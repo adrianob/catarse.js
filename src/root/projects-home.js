@@ -3,7 +3,7 @@ window.c.root.ProjectsHome = (((m, c, moment, h, _) => {
 
     return {
         controller: () => {
-            let sample3 = _.partial(_.sample, _, 3),
+            let sample6 = _.partial(_.sample, _, 6),
                 loaderWithToken = m.postgrest.loaderWithToken,
                 loader = _.partial(m.postgrest.loader, _, m.postgrest.request),
                 project = c.models.project,
@@ -14,7 +14,7 @@ window.c.root.ProjectsHome = (((m, c, moment, h, _) => {
                       cLoader = loaderWithToken(project.getPageOptions(f.filter.parameters())),
                       collection = m.prop([]);
 
-                cLoader.load().then(_.compose(collection, sample3));
+                cLoader.load().then(_.compose(collection, sample6));
 
                 return {
                     title: f.title,
